@@ -27,3 +27,23 @@ public class SE1404 {
     }
     
 }
+
+//thế thì: việc làm = tay clean & build kết hợp với Ant chạy bộ Test đảm bảo xanh -> jar
+//đỏ ko ra gì cả, chửi message báo lỗi, việc này ổn nhưng thủ công quá
+//có cách tự động vi diệu
+//DEV push code lên trên Git server
+//Có ai đó se theo dõi Git, nếu có thay đổi do ai đó push thì
+//Ai đó, sẽ kéo code về máy (xài git) local nào đó
+//Ai đó sẽ gọi Ant lên, (local)
+//Ai đó chạy Ant, nếu xanh -> ra file .jar
+//                    đỏ, thì ai đó quất email chửi thằng dev vừa push code lên
+//                     copy nguyên message đỏ lỗi đó chửi qua email
+//Ai đó này cứ lắng nghe Git để làm điều này
+//Dev sửa code, đẩy lên  đỏ, bị chửi đẩy lên đỏ bị chửi đẩy lên xanh kết thúc
+//liên tục liên tục tích hợp và kiểm tra code, ổn thoy, ko ổn chửi
+//Continuos Integration CI
+//Ai đó chính là App Jenkins, TeamCity,.... (CI app, CI server, CI tool)
+
+
+
+
