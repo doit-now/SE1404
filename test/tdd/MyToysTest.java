@@ -37,7 +37,7 @@ public class MyToysTest {
         assertEquals(24, cF(4));
         assertEquals(120, cF(5));
         assertEquals(720, cF(6));
-        
+        assertEquals(720, cF(6));
     }
     
      @Test  //biến hàm bất kì đi kèm JUnit thành public static void main()
