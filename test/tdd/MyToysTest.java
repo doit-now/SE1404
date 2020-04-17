@@ -29,8 +29,8 @@ public class MyToysTest {
     
     //tình huống hàm cF() chạy đúng, bản chất mỗi case phải là một hàm, tôi gộp
     @Test  //biến hàm bất kì đi kèm JUnit thành public static void main()
-    public void testSuccessfulCases() {
-        assertEquals(1, cF(0)); //hàm so sánh và in ra màu xanh khớp, đỏ nếu ko khớp
+    public void testSuccessfulLower10Cases() {
+        assertEquals(10, cF(0)); //hàm so sánh và in ra màu xanh khớp, đỏ nếu ko khớp
                                 //thay vì luận bằng mắt
         assertEquals(2, cF(2));
         assertEquals(6, cF(3));
@@ -40,13 +40,24 @@ public class MyToysTest {
         
     }
     
+     @Test  //biến hàm bất kì đi kèm JUnit thành public static void main()
+    public void testSuccessfulUpper10Cases() {       
+        assertEquals(3_628_800, cF(10));
+        assertEquals(39_916_800, cF(11));
+    }    
     //ngoại lệ thì sao, ngoại lệ ko phải là 1 value để so sánh
     //nó là cái bất thường nào đó xảy ra, ko ước lượng đc chính xác nó là giá trị gì
     //do đó ko thể so sánh với 1 cái khác, ko xài hàm assertX() đc
     @Test(expected = Exception.class)
-    public void testExceptionCases() {
+    public void testExceptionNegativeCases() {
         cF(-5);
         cF(-6);
+    }
+    
+    @Test(expected = Exception.class)
+    public void testExceptionGreater15Cases() {
+        cF(16);
+        cF(17);
     }
     
 }
